@@ -1,0 +1,128 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PresensiSerenity.Web
+build_property.RootNamespace = PresensiSerenity.Web
+build_property.ProjectDir = /home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = /home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Administration/Language/LanguageIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9BZG1pbmlzdHJhdGlvbi9MYW5ndWFnZS9MYW5ndWFnZUluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Administration/Role/RoleIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9BZG1pbmlzdHJhdGlvbi9Sb2xlL1JvbGVJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Administration/Translation/TranslationIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9BZG1pbmlzdHJhdGlvbi9UcmFuc2xhdGlvbi9UcmFuc2xhdGlvbkluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Administration/User/UserIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9BZG1pbmlzdHJhdGlvbi9Vc2VyL1VzZXJJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Common/Dashboard/DashboardIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9Db21tb24vRGFzaGJvYXJkL0Rhc2hib2FyZEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Master/Guru/GuruIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NYXN0ZXIvR3VydS9HdXJ1SW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Master/Jurusan/JurusanIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NYXN0ZXIvSnVydXNhbi9KdXJ1c2FuSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Master/Kelas/KelasIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NYXN0ZXIvS2VsYXMvS2VsYXNJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Master/Siswa/SiswaIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NYXN0ZXIvU2lzd2EvU2lzd2FJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Membership/Account/AccountLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NZW1iZXJzaGlwL0FjY291bnQvQWNjb3VudExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Membership/Account/ChangePassword/AccountChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NZW1iZXJzaGlwL0FjY291bnQvQ2hhbmdlUGFzc3dvcmQvQWNjb3VudENoYW5nZVBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Membership/Account/ForgotPassword/AccountForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NZW1iZXJzaGlwL0FjY291bnQvRm9yZ290UGFzc3dvcmQvQWNjb3VudEZvcmdvdFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Membership/Account/ResetPassword/AccountResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NZW1iZXJzaGlwL0FjY291bnQvUmVzZXRQYXNzd29yZC9BY2NvdW50UmVzZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Membership/Account/ResetPassword/AccountResetPasswordEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NZW1iZXJzaGlwL0FjY291bnQvUmVzZXRQYXNzd29yZC9BY2NvdW50UmVzZXRQYXNzd29yZEVtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Membership/Account/SignUp/AccountActivateEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NZW1iZXJzaGlwL0FjY291bnQvU2lnblVwL0FjY291bnRBY3RpdmF0ZUVtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Membership/Account/SignUp/AccountSignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NZW1iZXJzaGlwL0FjY291bnQvU2lnblVwL0FjY291bnRTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Membership/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NZW1iZXJzaGlwL19WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9fVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9fVmlld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Views/Errors/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXJyb3JzL0FjY2Vzc0RlbmllZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Views/Errors/ValidationError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXJyb3JzL1ZhbGlkYXRpb25FcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Views/Shared/_LayoutHead.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXRIZWFkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Views/Shared/_LayoutNoNavigation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXROb05hdmlnYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Views/Shared/_Sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19TaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

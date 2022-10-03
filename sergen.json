@@ -1,0 +1,46 @@
+{
+  "RootNamespace": "PresensiSerenity",
+  "ServerTypings": {
+    "LocalTexts": true
+  },
+  "Restore": {
+    "Exclude": [
+      "/wwwroot/Scripts/serenity/Serenity.CoreLib*.*"
+    ]
+  },
+  "Connections": [
+    {
+      "Key": "Presensi",
+      "Tables": [
+        {
+          "Tablename": "guru",
+          "Identifier": "Guru",
+          "Module": "Master",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "jurusan",
+          "Identifier": "Jurusan",
+          "Module": "Master",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "kelas",
+          "Identifier": "Kelas",
+          "Module": "Master",
+          "PermissionKey": "Administration:General"
+        },
+        {
+          "Tablename": "siswa",
+          "Identifier": "Siswa",
+          "Module": "Master",
+          "PermissionKey": "Administration:General"
+        }
+      ]
+    }
+  ],
+  "UpgradeInfo": {
+    "InitialType": "Community",
+    "InitialVersion": "6.0.3.0"
+  }
+}
