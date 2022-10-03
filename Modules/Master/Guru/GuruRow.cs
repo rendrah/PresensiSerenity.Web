@@ -57,9 +57,9 @@ namespace PresensiSerenity.Master
         }
 
         [DisplayName("Agama"), Column("agama")]
-        public AgaMa? Agama
+        public Agama? Agama
         {
-            get => (AgaMa)fields.Agama[this];
+            get => (Agama)fields.Agama[this];
             set => fields.Agama[this] = (int)value;
         }
 

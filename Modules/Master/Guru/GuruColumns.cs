@@ -24,7 +24,7 @@ namespace PresensiSerenity.Master.Columns
 
         [JenKelFormatter]
         public JenKel JenisKelamin { get; set; }
-        public AgaMa Agama { get; set; }
+        public Agama Agama { get; set; }
         [Width(200), QuickFilter]
         public string Alamat { get; set; }
         public StaTus Status { get; set; }

@@ -5,8 +5,8 @@
         Nama?: string;
         Tempat?: string;
         TanggalLahir?: string;
-        JenisKelamin?: number;
-        Agama?: number;
+        JenisKelamin?: gender;
+        Agama?: Agama;
         NoHp?: string;
         Alamat?: string;
         NamaAyah?: string;

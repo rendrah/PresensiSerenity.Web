@@ -19,7 +19,7 @@ namespace PresensiSerenity.Master.Columns
         public string Nama { get; set; }
         public string Tempat { get; set; }
         public DateTime TanggalLahir { get; set; }
-           [Width(100), GenderFormatter] 
+        //    [Width(100), GenderFormatter] 
         public int JenisKelamin { get; set; }
         public int Agama { get; set; }
         public string NoHp { get; set; }

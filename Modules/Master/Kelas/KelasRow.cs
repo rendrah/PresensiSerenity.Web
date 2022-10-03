@@ -13,6 +13,7 @@ namespace PresensiSerenity.Master
     [DisplayName("Kelas"), InstanceName("Kelas")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript]
     public sealed class KelasRow : Row<KelasRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Id Kelas"), Identity, IdProperty]

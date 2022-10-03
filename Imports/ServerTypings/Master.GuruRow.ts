@@ -6,7 +6,7 @@
         Tempat?: string;
         Tanggallahir?: string;
         JenisKelamin?: JenKel;
-        Agama?: AgaMa;
+        Agama?: Agama;
         Alamat?: string;
         Status?: StaTus;
     }

@@ -1,6 +1,8 @@
 ﻿using Serenity.Navigation;
 using MyPages = PresensiSerenity.Master.Pages;
 [assembly: NavigationLink(1000, "Dashboard", url: "~/", permission: "", icon: "fa-tachometer")]
+// [assembly: NavigationLink(1000, "Dashboard_1", url: "Master/Dashboard", permission: "", icon: "fa-tachometer")]
+
 
 
 [assembly: NavigationLink(1100, "Master/Guru", typeof(MyPages.GuruController), icon: null)]

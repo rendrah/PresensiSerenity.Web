@@ -405,13 +405,13 @@ declare namespace PresensiSerenity.Administration {
     }
 }
 declare namespace PresensiSerenity.Master {
-    enum AgaMa {
+    enum Agama {
         Islam = 1,
         Kristen = 2,
         Katolik = 3,
         Hindu = 4,
         Budha = 5,
-        Konghucu = 6
+        Khonghucu = 6
     }
 }
 declare namespace PresensiSerenity.Master {
@@ -444,7 +444,7 @@ declare namespace PresensiSerenity.Master {
         Tempat?: string;
         Tanggallahir?: string;
         JenisKelamin?: JenKel;
-        Agama?: AgaMa;
+        Agama?: Agama;
         Alamat?: string;
         Status?: StaTus;
     }
@@ -574,6 +574,8 @@ declare namespace PresensiSerenity.Master {
         const idProperty = "IdKelas";
         const nameProperty = "NamaKelas";
         const localTextPrefix = "Master.Kelas";
+        const lookupKey = "Master.Kelas";
+        function getLookup(): Q.Lookup<KelasRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
@@ -615,13 +617,13 @@ declare namespace PresensiSerenity.Master {
         Nama: Serenity.StringEditor;
         Tempat: Serenity.StringEditor;
         TanggalLahir: Serenity.DateEditor;
-        JenisKelamin: Serenity.IntegerEditor;
-        Agama: Serenity.IntegerEditor;
+        JenisKelamin: Serenity.EnumEditor;
+        Agama: Serenity.EnumEditor;
         NoHp: Serenity.StringEditor;
         Alamat: Serenity.StringEditor;
         NamaAyah: Serenity.StringEditor;
         NamaIbu: Serenity.StringEditor;
-        KelasId: Serenity.IntegerEditor;
+        KelasId: Serenity.LookupEditor;
     }
     class SiswaForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -636,8 +638,8 @@ declare namespace PresensiSerenity.Master {
         Nama?: string;
         Tempat?: string;
         TanggalLahir?: string;
-        JenisKelamin?: number;
-        Agama?: number;
+        JenisKelamin?: gender;
+        Agama?: Agama;
         NoHp?: string;
         Alamat?: string;
         NamaAyah?: string;
@@ -693,6 +695,12 @@ declare namespace PresensiSerenity.Master {
     enum StaTus {
         Piket = 1,
         Guru = 2
+    }
+}
+declare namespace PresensiSerenity.Master {
+    enum gender {
+        LakiLaki = 1,
+        Perempuan = 2
     }
 }
 declare namespace PresensiSerenity.Membership {
@@ -1088,6 +1096,11 @@ declare namespace PresensiSerenity.Master {
     }
 }
 declare namespace PresensiSerenity.Master {
+    class GenderFormatter implements Slick.Formatter {
+        format(ctx: Slick.FormatterContext): "<div><i class=\"fa fa-male text-primary\" ></i> Laki Laki</div>" | "<div><i class=\"fa fa-female text-danger\"></i> Perempuan</div>";
+    }
+}
+declare namespace PresensiSerenity.Master {
     class SiswaDialog extends Serenity.EntityDialog<SiswaRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -1109,6 +1122,8 @@ declare namespace PresensiSerenity.Master {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getQuickSearchFields(): Serenity.QuickSearchField[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace PresensiSerenity.Membership {

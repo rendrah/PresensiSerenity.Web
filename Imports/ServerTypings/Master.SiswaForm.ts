@@ -4,13 +4,13 @@
         Nama: Serenity.StringEditor;
         Tempat: Serenity.StringEditor;
         TanggalLahir: Serenity.DateEditor;
-        JenisKelamin: Serenity.IntegerEditor;
-        Agama: Serenity.IntegerEditor;
+        JenisKelamin: Serenity.EnumEditor;
+        Agama: Serenity.EnumEditor;
         NoHp: Serenity.StringEditor;
         Alamat: Serenity.StringEditor;
         NamaAyah: Serenity.StringEditor;
         NamaIbu: Serenity.StringEditor;
-        KelasId: Serenity.IntegerEditor;
+        KelasId: Serenity.LookupEditor;
     }
 
     export class SiswaForm extends Serenity.PrefixedContext {
@@ -26,7 +26,8 @@
                 var s = Serenity;
                 var w0 = s.StringEditor;
                 var w1 = s.DateEditor;
-                var w2 = s.IntegerEditor;
+                var w2 = s.EnumEditor;
+                var w3 = s.LookupEditor;
 
                 Q.initFormType(SiswaForm, [
                     'Nis', w0,
@@ -39,7 +40,7 @@
                     'Alamat', w0,
                     'NamaAyah', w0,
                     'NamaIbu', w0,
-                    'KelasId', w2
+                    'KelasId', w3
                 ]);
             }
         }

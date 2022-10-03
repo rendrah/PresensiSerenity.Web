@@ -11,6 +11,11 @@
         export const idProperty = 'IdKelas';
         export const nameProperty = 'NamaKelas';
         export const localTextPrefix = 'Master.Kelas';
+        export const lookupKey = 'Master.Kelas';
+
+        export function getLookup(): Q.Lookup<KelasRow> {
+            return Q.getLookup<KelasRow>('Master.Kelas');
+        }
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';
         export const readPermission = 'Administration:General';
