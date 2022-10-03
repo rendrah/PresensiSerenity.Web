@@ -8,7 +8,7 @@ namespace PresensiSerenity.Master
     {
         [Description("Laki - Laki")]
         LakiLaki = 1,
-        [Description("Perempuan")]
+        [Description("perempuan")]
         Perempuan = 2
     }
 }
