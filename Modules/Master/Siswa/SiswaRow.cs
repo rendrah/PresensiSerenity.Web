@@ -35,7 +35,7 @@ namespace PresensiSerenity.Master
             set => fields.Nama[this] = value;
         }
 
-        [DisplayName("Tempat"), Size(25)]
+        [DisplayName("Tempat"), Size(50)]
         public string Tempat
         {
             get => fields.Tempat[this];
@@ -49,18 +49,19 @@ namespace PresensiSerenity.Master
             set => fields.TanggalLahir[this] = value;
         }
 
-        [DisplayName("Jenis Kelamin")]
-        public int? JenisKelamin
-        {
-            get => fields.JenisKelamin[this];
-            set => fields.JenisKelamin[this] = value;
-        }
+        [DisplayName("Jenis Kelamin"),Size(250),  QuickSearch, QuickFilter ]
+        public gender? JenisKelamin 
+        { 
+            get => (gender?)fields.JenisKelamin[this]; 
+            set => fields.JenisKelamin[this] = (Int32?)value; 
+        } 
 
-        [DisplayName("Agama")]
-        public int? Agama
-        {
-            get => fields.Agama[this];
-            set => fields.Agama[this] = value;
+        [DisplayName("Agama"),Size(200)]
+        public Agama? Agama  
+        
+        { 
+            get => (Agama?)fields.Agama[this]; 
+            set => fields.Agama[this] = (Int32?)value; 
         }
 
         [DisplayName("No Hp"), Column("noHP"), Size(25)]
@@ -92,6 +93,7 @@ namespace PresensiSerenity.Master
         }
 
         [DisplayName("Kelas"), Column("kelasId"), ForeignKey("kelas", "IdKelas"), LeftJoin("jKelas"), TextualField("KelasNamaKelas")]
+         [LookupEditor(typeof(KelasRow),InplaceAdd = true)]
         public int? KelasId
         {
             get => fields.KelasId[this];
