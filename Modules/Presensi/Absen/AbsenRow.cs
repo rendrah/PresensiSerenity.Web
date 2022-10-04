@@ -29,10 +29,10 @@ namespace PresensiSerenity.Presensi
         }
 
         [DisplayName("Ijin"), Column("ijin"), Size(20), QuickSearch, NameProperty]
-        public string Ijin
+        public Ijintype Ijin
         {
-            get => fields.Ijin[this];
-            set => fields.Ijin[this] = value;
+            get => (Ijintype)fields.Ijin[this];
+            set => fields.Ijin[this] = (Int32)value;
         }
 
         [DisplayName("Image"), Column("image"), Size(50)]
@@ -50,6 +50,7 @@ namespace PresensiSerenity.Presensi
         }
 
         [DisplayName("Siswa"), Column("siswaId"), ForeignKey("siswa", "Id"), LeftJoin("jSiswa"), TextualField("SiswaNis")]
+        [LookupEditor(typeof(Master.SiswaRow), InplaceAdd = true), LookupInclude]
         public int? SiswaId
         {
             get => fields.SiswaId[this];
@@ -210,7 +211,7 @@ namespace PresensiSerenity.Presensi
         {
             public Int32Field Id;
             public DateTimeField Tanggal;
-            public StringField Ijin;
+            public Int32Field Ijin;
             public StringField Image;
             public Int32Field Status;
             public Int32Field SiswaId;

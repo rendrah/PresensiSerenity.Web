@@ -21,14 +21,14 @@ namespace PresensiSerenity.Master
             set => fields.Id[this] = value;
         }
 
-        [DisplayName("Nip"), Column("nip"), Size(25), QuickSearch, NameProperty]
+        [DisplayName("Nip"), Column("nip"), Size(25), QuickSearch]
         public string Nip
         {
             get => fields.Nip[this];
             set => fields.Nip[this] = value;
         }
 
-        [DisplayName("Nama"), Column("nama"), Size(50)]
+        [DisplayName("Nama"), Column("nama"), Size(50), NameProperty]
         public string Nama
         {
             get => fields.Nama[this];

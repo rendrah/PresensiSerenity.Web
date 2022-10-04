@@ -2,7 +2,7 @@
     export interface AbsenRow {
         Id?: number;
         Tanggal?: string;
-        Ijin?: string;
+        Ijin?: Ijintype;
         Image?: string;
         Status?: number;
         SiswaId?: number;

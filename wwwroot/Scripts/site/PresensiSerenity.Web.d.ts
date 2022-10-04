@@ -450,7 +450,7 @@ declare namespace PresensiSerenity.Master {
     }
     namespace GuruRow {
         const idProperty = "Id";
-        const nameProperty = "Nip";
+        const nameProperty = "Nama";
         const localTextPrefix = "Master.Guru";
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
@@ -650,8 +650,10 @@ declare namespace PresensiSerenity.Master {
     }
     namespace SiswaRow {
         const idProperty = "Id";
-        const nameProperty = "Nis";
+        const nameProperty = "Nama";
         const localTextPrefix = "Master.Siswa";
+        const lookupKey = "Master.Siswa";
+        function getLookup(): Q.Lookup<SiswaRow>;
         const deletePermission = "Siswa:General";
         const insertPermission = "Siswa:General";
         const readPermission = "Siswa:General";
@@ -801,10 +803,10 @@ declare namespace PresensiSerenity.Presensi {
 declare namespace PresensiSerenity.Presensi {
     interface AbsenForm {
         Tanggal: Serenity.DateEditor;
-        Ijin: Serenity.StringEditor;
+        Ijin: Serenity.EnumEditor;
         Image: Serenity.StringEditor;
         Status: Serenity.IntegerEditor;
-        SiswaId: Serenity.IntegerEditor;
+        SiswaId: Serenity.LookupEditor;
         GuruId: Serenity.IntegerEditor;
     }
     class AbsenForm extends Serenity.PrefixedContext {
@@ -817,7 +819,7 @@ declare namespace PresensiSerenity.Presensi {
     interface AbsenRow {
         Id?: number;
         Tanggal?: string;
-        Ijin?: string;
+        Ijin?: Ijintype;
         Image?: string;
         Status?: number;
         SiswaId?: number;
@@ -895,6 +897,13 @@ declare namespace PresensiSerenity.Presensi {
             Retrieve = "Presensi/Absen/Retrieve",
             List = "Presensi/Absen/List"
         }
+    }
+}
+declare namespace PresensiSerenity.Presensi {
+    enum Ijintype {
+        Sakit = 1,
+        Alpha = 2,
+        Izin = 3
     }
 }
 declare namespace PresensiSerenity {
@@ -1231,6 +1240,7 @@ declare namespace PresensiSerenity.Master {
         protected getSlickOptions(): Slick.GridOptions;
         protected createSlickGrid(): Slick.Grid;
         protected getColumns(): Slick.Column[];
+        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace PresensiSerenity.Membership {

@@ -16,7 +16,9 @@ namespace PresensiSerenity.Presensi.Forms
         public string Ijin { get; set; }
         public string Image { get; set; }
         public int Status { get; set; }
+        [ReadOnly(true)]
         public int SiswaId { get; set; }
+        [ReadOnly(true)]
         public int GuruId { get; set; }
     }
 }

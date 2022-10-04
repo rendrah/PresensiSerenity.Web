@@ -101,8 +101,8 @@
     <div class="col-lg-3 col-sm-6">
         <div class="card s-dashboard-card-sm bg-primary bg-opacity-50">
             <div class="card-body">
-                <h3>@Model.OpenOrders</h3>
-                <p>Open Orders</p>
+                <h3>@Model.AbsenCount</h3>
+                <p>Jumlah Siswa Tidak Masuk</p>
             </div>
             <div class="icon">
                 <i class="fa fa-shopping-cart"></i>
@@ -112,8 +112,8 @@
     <div class="col-lg-3 col-sm-6">
         <div class="card s-dashboard-card-sm s-alt bg-info bg-opacity-50">
             <div class="card-body">
-                <h3>@Model.ClosedOrderPercent<sup style="font-size: 20px">%</sup></h3>
-                <p>Closed Orders</p>
+                <h3>@Model.jmlSiswaSakit</h3>
+                <p>Jumlah Siswa Sakit</p>
             </div>
             <div class="icon">
                 <i class="fa fa-truck"></i>
@@ -123,8 +123,8 @@
     <div class="col-lg-3 col-sm-6">
         <div class="card s-dashboard-card-sm bg-warning bg-opacity-50">
             <div class="card-body">
-                <h3>@Model.CustomerCount</h3>
-                <p>Total Customers</p>
+                <h3>@Model.jmlSiswaIjin</h3>
+                <p>Jumlah Siswa Ijin</p>
             </div>
             <div class="icon">
                 <i class="fa fa-user-plus"></i>
@@ -134,8 +134,8 @@
     <div class="col-lg-3 col-sm-6">
         <div class="card s-dashboard-card-sm s-alt bg-success bg-opacity-50">
             <div class="card-body">
-                <h3>@Model.ProductCount</h3>
-                <p>Product Types</p>
+                <h3>@Model.jmlSiswaAlpha</h3>
+                <p>Jumlah Siswa Alpha</p>
             </div>
             <div class="icon">
                 <i class="fa fa-tag"></i>
@@ -267,9 +267,7 @@
 
 <script>
 
-    $(function () {
-
-        
+    onload = function () {
         $('.daterange').daterangepicker({
             ranges: {
                 'Today': [moment(), moment()],
@@ -480,5 +478,5 @@
             salesByQuarterChart.update();
             salesByTypeChart.update();
         });
-    });
+    };
 </script>

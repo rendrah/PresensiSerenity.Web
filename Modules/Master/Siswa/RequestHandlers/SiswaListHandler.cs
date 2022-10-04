@@ -1,4 +1,5 @@
 ﻿using Serenity;
+using Serenity.Abstractions;
 using Serenity.Data;
 using Serenity.Services;
 using System;
@@ -13,21 +14,22 @@ namespace PresensiSerenity.Master
 
     public class SiswaListHandler : ListRequestHandler<MyRow, MyRequest, MyResponse>, ISiswaListHandler
     {
-        // private IUserRetrieveService UserRetriever { get; }
-        // private static MyRow.RowFields fld { get { return MyRow.Fields; } }
-        public SiswaListHandler(IRequestContext context)
+        private IUserRetrieveService UserRetriever { get; }
+        private static MyRow.RowFields fld { get { return MyRow.Fields; } }
+        public SiswaListHandler(IRequestContext context,IUserRetrieveService userRetriever)
              : base(context)
         {
-            // UserRetriever = userRetriever ?? throw new ArgumentNullException(nameof(userRetriever));
+            UserRetriever = userRetriever ?? throw new ArgumentNullException(nameof(userRetriever));
+        }
+        protected override void ApplyFilters(SqlQuery query)
+        {
+            base.ApplyFilters(query);
+
+            UserDefinition user = User.GetUserDefinition<UserDefinition>(UserRetriever);
+            query.Where(fld.Nis == user.UserId);
         }
     }
 
 
-    // protected override void ApplyFilters(SqlQuery query)
-    // {
-    //     base.ApplyFilters(query);
 
-    //     UserDefinition user = User.GetUserDefinition<UserDefinition>(UserRetriever);
-    //     query.Where(fld.UserId == user.UserId);
-    // }
 }
