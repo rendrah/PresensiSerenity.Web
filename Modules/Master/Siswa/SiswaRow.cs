@@ -10,8 +10,8 @@ namespace PresensiSerenity.Master
 {
     [ConnectionKey("Presensi"), Module("Master"), TableName("siswa")]
     [DisplayName("Siswa"), InstanceName("Siswa")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission("Siswa:General")]
+    [ModifyPermission("Siswa:General")]
     public sealed class SiswaRow : Row<SiswaRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity, IdProperty]
@@ -49,7 +49,7 @@ namespace PresensiSerenity.Master
             set => fields.TanggalLahir[this] = value;
         }
 
-        [DisplayName("Jenis Kelamin"),Size(250),  QuickSearch, QuickFilter ]
+        [DisplayName("Jenis Kelamin"),Size(250)]
         public gender? JenisKelamin 
         { 
             get => (gender?)fields.JenisKelamin[this]; 
@@ -93,14 +93,15 @@ namespace PresensiSerenity.Master
         }
 
         [DisplayName("Kelas"), Column("kelasId"), ForeignKey("kelas", "IdKelas"), LeftJoin("jKelas"), TextualField("KelasNamaKelas")]
-         [LookupEditor(typeof(KelasRow),InplaceAdd = true)]
+         [LookupEditor(typeof(KelasRow),InplaceAdd = true),LookupInclude]
+         
         public int? KelasId
         {
             get => fields.KelasId[this];
             set => fields.KelasId[this] = value;
         }
 
-        [DisplayName("Kelas Nama Kelas"), Expression("jKelas.[NamaKelas]")]
+        [DisplayName("Nama Kelas"), Expression("jKelas.[NamaKelas]")]
         public string KelasNamaKelas
         {
             get => fields.KelasNamaKelas[this];

@@ -35,6 +35,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9Db21tb24vRGFzaGJvYXJkL0Rhc2hib2FyZEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Master/Dashboard/MasterDashboardIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NYXN0ZXIvRGFzaGJvYXJkL01hc3RlckRhc2hib2FyZEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Master/Guru/GuruIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NYXN0ZXIvR3VydS9HdXJ1SW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -81,6 +85,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Membership/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9NZW1iZXJzaGlwL19WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Presensi/Absen/AbsenIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TW9kdWxlcy9QcmVzZW5zaS9BYnNlbi9BYnNlbkluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/_ViewImports.cshtml]

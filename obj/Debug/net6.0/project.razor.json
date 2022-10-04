@@ -16323,6 +16323,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Presensi/Absen/AbsenIndex.cshtml",
+      "TargetPath": "Modules\\Presensi\\Absen\\AbsenIndex.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Administration/Translation/TranslationIndex.cshtml",
       "TargetPath": "Modules\\Administration\\Translation\\TranslationIndex.cshtml",
       "FileKind": "mvc"
@@ -16395,6 +16400,11 @@
     {
       "FilePath": "/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Administration/Language/LanguageIndex.cshtml",
       "TargetPath": "Modules\\Administration\\Language\\LanguageIndex.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/rendra/Documents/project_serin/presensiSerenity/PresensiSerenity.Web/Modules/Master/Dashboard/MasterDashboardIndex.cshtml",
+      "TargetPath": "Modules\\Master\\Dashboard\\MasterDashboardIndex.cshtml",
       "FileKind": "mvc"
     },
     {

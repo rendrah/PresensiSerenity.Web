@@ -20,10 +20,10 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Nis';
         export const localTextPrefix = 'Master.Siswa';
-        export const deletePermission = 'Administration:General';
-        export const insertPermission = 'Administration:General';
-        export const readPermission = 'Administration:General';
-        export const updatePermission = 'Administration:General';
+        export const deletePermission = 'Siswa:General';
+        export const insertPermission = 'Siswa:General';
+        export const readPermission = 'Siswa:General';
+        export const updatePermission = 'Siswa:General';
 
         export declare const enum Fields {
             Id = "Id",

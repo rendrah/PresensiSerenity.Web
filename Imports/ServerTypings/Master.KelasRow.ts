@@ -16,10 +16,10 @@
         export function getLookup(): Q.Lookup<KelasRow> {
             return Q.getLookup<KelasRow>('Master.Kelas');
         }
-        export const deletePermission = 'Administration:General';
-        export const insertPermission = 'Administration:General';
-        export const readPermission = 'Administration:General';
-        export const updatePermission = 'Administration:General';
+        export const deletePermission = 'Kelas:Modify';
+        export const insertPermission = 'Kelas:Modify';
+        export const readPermission = 'Kelas:View';
+        export const updatePermission = 'Kelas:Modify';
 
         export declare const enum Fields {
             IdKelas = "IdKelas",

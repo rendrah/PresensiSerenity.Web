@@ -13,6 +13,12 @@
       "Key": "Presensi",
       "Tables": [
         {
+          "Tablename": "absen",
+          "Identifier": "Absen",
+          "Module": "Presensi",
+          "PermissionKey": "Administration:General"
+        },
+        {
           "Tablename": "guru",
           "Identifier": "Guru",
           "Module": "Master",

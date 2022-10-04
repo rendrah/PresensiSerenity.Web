@@ -43,6 +43,11 @@ namespace MVC
 
         public static class Master
         {
+            public static class Dashboard
+            {
+                public const string MasterDashboardIndex = "~/Modules/Master/Dashboard/MasterDashboardIndex.cshtml";
+            }
+
             public static class Guru
             {
                 public const string GuruIndex = "~/Modules/Master/Guru/GuruIndex.cshtml";
@@ -91,6 +96,15 @@ namespace MVC
                     public const string AccountActivateEmail = "~/Modules/Membership/Account/SignUp/AccountActivateEmail.cshtml";
                     public const string AccountSignUp = "~/Modules/Membership/Account/SignUp/AccountSignUp.cshtml";
                 }
+            }
+
+        }
+
+        public static class Presensi
+        {
+            public static class Absen
+            {
+                public const string AbsenIndex = "~/Modules/Presensi/Absen/AbsenIndex.cshtml";
             }
         }
 
