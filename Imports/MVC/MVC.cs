@@ -92,6 +92,15 @@ namespace MVC
                     public const string AccountSignUp = "~/Modules/Membership/Account/SignUp/AccountSignUp.cshtml";
                 }
             }
+
+        }
+
+        public static class Presensi
+        {
+            public static class Absen
+            {
+                public const string AbsenIndex = "~/Modules/Presensi/Absen/AbsenIndex.cshtml";
+            }
         }
 
         public static class Shared

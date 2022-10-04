@@ -793,6 +793,110 @@ declare namespace PresensiSerenity.Membership {
         Password?: string;
     }
 }
+declare namespace PresensiSerenity.Presensi {
+    class AbsenColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace PresensiSerenity.Presensi {
+    interface AbsenForm {
+        Tanggal: Serenity.DateEditor;
+        Ijin: Serenity.StringEditor;
+        Image: Serenity.StringEditor;
+        Status: Serenity.IntegerEditor;
+        SiswaId: Serenity.IntegerEditor;
+        GuruId: Serenity.IntegerEditor;
+    }
+    class AbsenForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace PresensiSerenity.Presensi {
+    interface AbsenRow {
+        Id?: number;
+        Tanggal?: string;
+        Ijin?: string;
+        Image?: string;
+        Status?: number;
+        SiswaId?: number;
+        GuruId?: number;
+        SiswaNis?: string;
+        SiswaNama?: string;
+        SiswaTempat?: string;
+        SiswaTanggalLahir?: string;
+        SiswaJenisKelamin?: number;
+        SiswaAgama?: number;
+        SiswaNoHp?: string;
+        SiswaAlamat?: string;
+        SiswaNamaAyah?: string;
+        SiswaNamaIbu?: string;
+        SiswaKelasId?: number;
+        GuruNip?: string;
+        GuruNama?: string;
+        GuruTempat?: string;
+        GuruTanggallahir?: string;
+        GuruJenisKelamin?: number;
+        GuruAgama?: number;
+        GuruAlamat?: string;
+        GuruStatus?: number;
+    }
+    namespace AbsenRow {
+        const idProperty = "Id";
+        const nameProperty = "Ijin";
+        const localTextPrefix = "Presensi.Absen";
+        const deletePermission = "Absensi:Modify";
+        const insertPermission = "Absensi:Modify";
+        const readPermission = "Absensi:View";
+        const updatePermission = "Absensi:Modify";
+        const enum Fields {
+            Id = "Id",
+            Tanggal = "Tanggal",
+            Ijin = "Ijin",
+            Image = "Image",
+            Status = "Status",
+            SiswaId = "SiswaId",
+            GuruId = "GuruId",
+            SiswaNis = "SiswaNis",
+            SiswaNama = "SiswaNama",
+            SiswaTempat = "SiswaTempat",
+            SiswaTanggalLahir = "SiswaTanggalLahir",
+            SiswaJenisKelamin = "SiswaJenisKelamin",
+            SiswaAgama = "SiswaAgama",
+            SiswaNoHp = "SiswaNoHp",
+            SiswaAlamat = "SiswaAlamat",
+            SiswaNamaAyah = "SiswaNamaAyah",
+            SiswaNamaIbu = "SiswaNamaIbu",
+            SiswaKelasId = "SiswaKelasId",
+            GuruNip = "GuruNip",
+            GuruNama = "GuruNama",
+            GuruTempat = "GuruTempat",
+            GuruTanggallahir = "GuruTanggallahir",
+            GuruJenisKelamin = "GuruJenisKelamin",
+            GuruAgama = "GuruAgama",
+            GuruAlamat = "GuruAlamat",
+            GuruStatus = "GuruStatus"
+        }
+    }
+}
+declare namespace PresensiSerenity.Presensi {
+    namespace AbsenService {
+        const baseUrl = "Presensi/Absen";
+        function Create(request: Serenity.SaveRequest<AbsenRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<AbsenRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AbsenRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AbsenRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Presensi/Absen/Create",
+            Update = "Presensi/Absen/Update",
+            Delete = "Presensi/Absen/Delete",
+            Retrieve = "Presensi/Absen/Retrieve",
+            List = "Presensi/Absen/List"
+        }
+    }
+}
 declare namespace PresensiSerenity {
     interface ScriptUserDefinition {
         Username?: string;
@@ -1160,6 +1264,30 @@ declare namespace PresensiSerenity.Membership {
     class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
         protected getFormKey(): string;
         private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace PresensiSerenity.Presensi {
+    class AbsenDialog extends Serenity.EntityDialog<AbsenRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: AbsenForm;
+    }
+}
+declare namespace PresensiSerenity.Presensi {
+    class AbsenGrid extends Serenity.EntityGrid<AbsenRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof AbsenDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
         constructor(container: JQuery);
     }
 }

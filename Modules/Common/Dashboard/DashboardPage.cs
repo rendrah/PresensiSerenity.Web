@@ -25,23 +25,19 @@ namespace PresensiSerenity.Common.Pages
             if (sqlConnections is null)
             	throw new ArgumentNullException(nameof(sqlConnections));
 
-            var o = Serenity.Demo.Northwind.OrderRow.Fields;
+            var o = PresensiSerenity.Presensi.AbsenRow.Fields;           
 
             var cachedModel = cache.GetLocalStoreOnly("DashboardPageModel", TimeSpan.FromMinutes(5),
                 o.GenerationKey, () =>
                 {
                     var model = new DashboardPageModel();
-                    using (var connection = sqlConnections.NewFor<Serenity.Demo.Northwind.OrderRow>())
+                    using (var connection = sqlConnections.NewFor<PresensiSerenity.Presensi.AbsenRow>())
                     {
-                        model.OpenOrders = connection.Count<Serenity.Demo.Northwind.OrderRow>(
-                            o.ShippingState == (int)Serenity.Demo.Northwind.OrderShippingState.NotShipped);
-                        var closedOrders = connection.Count<Serenity.Demo.Northwind.OrderRow>(
-                            o.ShippingState == (int)Serenity.Demo.Northwind.OrderShippingState.Shipped);
-                        var totalOrders = model.OpenOrders + closedOrders;
-                        model.ClosedOrderPercent = (int)Math.Round(totalOrders == 0 ? 100 :
-                            ((double)closedOrders / totalOrders * 100));
-                        model.CustomerCount = connection.Count<Serenity.Demo.Northwind.CustomerRow>();
-                        model.ProductCount = connection.Count<Serenity.Demo.Northwind.ProductRow>();
+                        model.jmlSiswaAbsen = connection.Count<Presensi.AbsenRow>();
+                        model.jmlSiswaSakit = connection.Count<Presensi.AbsenRow>( o.Ijin == 1 && o.Tanggal == DateTime.Today );
+                        // & o.Tanggal= DateTimeField(now));
+                        model.jmlSiswaIjin = connection.Count<Presensi.AbsenRow>( o.Ijin == 3 && o.Tanggal == DateTime.Today );
+                        model.jmlSiswaAlpha = connection.Count<Presensi.AbsenRow>( o.Ijin == 2 && o.Tanggal == DateTime.Today );                                                     
                     }
                     return model;
                 });
