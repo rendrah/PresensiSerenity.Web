@@ -50,14 +50,14 @@ namespace PresensiSerenity.Master
             set => fields.TanggalLahir[this] = value;
         }
 
-        [DisplayName("Jenis Kelamin"),Size(250)]
+        [DisplayName("Jenis Kelamin"),Size(250),QuickSearch, QuickFilter]
         public gender? JenisKelamin 
         { 
             get => (gender?)fields.JenisKelamin[this]; 
             set => fields.JenisKelamin[this] = (Int32?)value; 
         } 
 
-        [DisplayName("Agama"),Size(200)]
+        [DisplayName("Agama"),Size(200),QuickSearch, QuickFilter]
         public Agama? Agama  
         
         { 

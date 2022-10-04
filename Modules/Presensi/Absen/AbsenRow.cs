@@ -28,7 +28,7 @@ namespace PresensiSerenity.Presensi
             set => fields.Tanggal[this] = value;
         }
 
-        [DisplayName("Ijin"), Column("ijin"), Size(20), QuickSearch, NameProperty]
+        [DisplayName("Ijin"), Column("ijin"), Size(20), QuickSearch, NameProperty,QuickFilter]
         public string Ijin
         {
             get => fields.Ijin[this];
