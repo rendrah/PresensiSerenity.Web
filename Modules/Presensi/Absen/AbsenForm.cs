@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Serenity;
 using Serenity.ComponentModel;
 using Serenity.Data;
@@ -19,4 +20,5 @@ namespace PresensiSerenity.Presensi.Forms
         public int SiswaId { get; set; }
         public int GuruId { get; set; }
     }
+
 }

@@ -11,8 +11,8 @@ namespace PresensiSerenity.Master
 {
     [ConnectionKey("Presensi"), Module("Master"), TableName("kelas")]
     [DisplayName("Kelas"), InstanceName("Kelas")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission("Kelas:View")]
+    [ModifyPermission("Kelas:Modify")]
     [LookupScript]
     public sealed class KelasRow : Row<KelasRow.RowFields>, IIdRow, INameRow
     {
@@ -44,7 +44,8 @@ namespace PresensiSerenity.Master
             get => fields.JurusanNamaJurusan[this];
             set => fields.JurusanNamaJurusan[this] = value;
         }
-
+        [MasterDetailRelation(foreignKey: "KelasID")]
+        [DisplayName("Siswa Detail")]
         public List<SiswaRow> SiswaDetail
         {
             get => fields.SiswaDetail[this];

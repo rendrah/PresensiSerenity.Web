@@ -448,7 +448,7 @@ var PresensiSerenity;
         var GuruRow;
         (function (GuruRow) {
             GuruRow.idProperty = 'Id';
-            GuruRow.nameProperty = 'Nip';
+            GuruRow.nameProperty = 'Nama';
             GuruRow.localTextPrefix = 'Master.Guru';
             GuruRow.deletePermission = 'Administration:General';
             GuruRow.insertPermission = 'Administration:General';
@@ -541,10 +541,10 @@ var PresensiSerenity;
                 return Q.getLookup('Master.Jurusan');
             }
             JurusanRow.getLookup = getLookup;
-            JurusanRow.deletePermission = 'Administration:General';
-            JurusanRow.insertPermission = 'Administration:General';
-            JurusanRow.readPermission = 'Administration:General';
-            JurusanRow.updatePermission = 'Administration:General';
+            JurusanRow.deletePermission = 'Jurusan:Modify';
+            JurusanRow.insertPermission = 'Jurusan:Modify';
+            JurusanRow.readPermission = 'Jurusan:View';
+            JurusanRow.updatePermission = 'Jurusan:Modify';
         })(JurusanRow = Master.JurusanRow || (Master.JurusanRow = {}));
     })(Master = PresensiSerenity.Master || (PresensiSerenity.Master = {}));
 })(PresensiSerenity || (PresensiSerenity = {}));
@@ -624,10 +624,10 @@ var PresensiSerenity;
                 return Q.getLookup('Master.Kelas');
             }
             KelasRow.getLookup = getLookup;
-            KelasRow.deletePermission = 'Administration:General';
-            KelasRow.insertPermission = 'Administration:General';
-            KelasRow.readPermission = 'Administration:General';
-            KelasRow.updatePermission = 'Administration:General';
+            KelasRow.deletePermission = 'Kelas:Modify';
+            KelasRow.insertPermission = 'Kelas:Modify';
+            KelasRow.readPermission = 'Kelas:View';
+            KelasRow.updatePermission = 'Kelas:Modify';
         })(KelasRow = Master.KelasRow || (Master.KelasRow = {}));
     })(Master = PresensiSerenity.Master || (PresensiSerenity.Master = {}));
 })(PresensiSerenity || (PresensiSerenity = {}));
@@ -709,12 +709,17 @@ var PresensiSerenity;
         var SiswaRow;
         (function (SiswaRow) {
             SiswaRow.idProperty = 'Id';
-            SiswaRow.nameProperty = 'Nis';
+            SiswaRow.nameProperty = 'Nama';
             SiswaRow.localTextPrefix = 'Master.Siswa';
-            SiswaRow.deletePermission = 'Administration:General';
-            SiswaRow.insertPermission = 'Administration:General';
-            SiswaRow.readPermission = 'Administration:General';
-            SiswaRow.updatePermission = 'Administration:General';
+            SiswaRow.lookupKey = 'Master.Siswa';
+            function getLookup() {
+                return Q.getLookup('Master.Siswa');
+            }
+            SiswaRow.getLookup = getLookup;
+            SiswaRow.deletePermission = 'Siswa:General';
+            SiswaRow.insertPermission = 'Siswa:General';
+            SiswaRow.readPermission = 'Siswa:General';
+            SiswaRow.updatePermission = 'Siswa:General';
         })(SiswaRow = Master.SiswaRow || (Master.SiswaRow = {}));
     })(Master = PresensiSerenity.Master || (PresensiSerenity.Master = {}));
 })(PresensiSerenity || (PresensiSerenity = {}));
@@ -919,15 +924,17 @@ var PresensiSerenity;
                     AbsenForm.init = true;
                     var s = Serenity;
                     var w0 = s.DateEditor;
-                    var w1 = s.StringEditor;
-                    var w2 = s.IntegerEditor;
+                    var w1 = s.EnumEditor;
+                    var w2 = s.StringEditor;
+                    var w3 = s.IntegerEditor;
+                    var w4 = s.LookupEditor;
                     Q.initFormType(AbsenForm, [
                         'Tanggal', w0,
                         'Ijin', w1,
-                        'Image', w1,
-                        'Status', w2,
-                        'SiswaId', w2,
-                        'GuruId', w2
+                        'Image', w2,
+                        'Status', w3,
+                        'SiswaId', w4,
+                        'GuruId', w3
                     ]);
                 }
                 return _this;
@@ -973,6 +980,19 @@ var PresensiSerenity;
                 };
             });
         })(AbsenService = Presensi.AbsenService || (Presensi.AbsenService = {}));
+    })(Presensi = PresensiSerenity.Presensi || (PresensiSerenity.Presensi = {}));
+})(PresensiSerenity || (PresensiSerenity = {}));
+var PresensiSerenity;
+(function (PresensiSerenity) {
+    var Presensi;
+    (function (Presensi) {
+        var Ijintype;
+        (function (Ijintype) {
+            Ijintype[Ijintype["Sakit"] = 1] = "Sakit";
+            Ijintype[Ijintype["Alpha"] = 2] = "Alpha";
+            Ijintype[Ijintype["Izin"] = 3] = "Izin";
+        })(Ijintype = Presensi.Ijintype || (Presensi.Ijintype = {}));
+        Serenity.Decorators.registerEnumType(Ijintype, 'PresensiSerenity.Presensi.Ijintype', 'Absensi.Ijin');
     })(Presensi = PresensiSerenity.Presensi || (PresensiSerenity.Presensi = {}));
 })(PresensiSerenity || (PresensiSerenity = {}));
 var PresensiSerenity;
@@ -2366,6 +2386,108 @@ var PresensiSerenity;
                     onViewSubmit: function () { return _this.onViewSubmit(); }
                 }));
                 return buttons;
+            };
+            SiswaGrid.prototype.getSlickOptions = function () {
+                var opt = _super.prototype.getSlickOptions.call(this);
+                opt.rowHeight = 80;
+                opt.enableTextSelectionOnCells = true;
+                opt.selectedCellCssClass = "slick-row-selected";
+                opt.enableCellNavigation = true;
+                return opt;
+            };
+            SiswaGrid.prototype.createSlickGrid = function () {
+                var grid = _super.prototype.createSlickGrid.call(this);
+                grid.setSelectionModel(new Slick.RowSelectionModel());
+                return grid;
+            };
+            SiswaGrid.prototype.getColumns = function () {
+                var columns = _super.prototype.getColumns.call(this);
+                Q.first(columns, function (x) { return x.field == "Nis" /* Nis */; }).format =
+                    function (ctx) { return "<a href=\"javascript:;\" class=\"Buku-\n            link\">".concat(Q.htmlEncode(ctx.value), "</a>"); };
+                columns.unshift({
+                    field: 'Delete Row',
+                    name: '',
+                    //     format: ctx => '<a class="inline-action delete-row" title="delete 
+                    //     "style="cursor: pointer;" > ' +
+                    // '<i class="fa fa-trash-o text-red"></i></a>',
+                    format: function (ctx) { return "<a class=\"inline-action view-details\" title=\"view-details\" style=\"cursor: pointer;\"><i class=\"fa fa-search\"></i></a>"; },
+                    width: 24,
+                    minWidth: 24,
+                    maxWidth: 24
+                });
+                return columns;
+            };
+            SiswaGrid.prototype.onClick = function (e, row, cell) {
+                // let base grid handle clicks for its edit links
+                _super.prototype.onClick.call(this, e, row, cell);
+                // if base grid already handled, we shouldn"t handle it again
+                if (e.isDefaultPrevented()) {
+                    return;
+                }
+                // get reference to current item
+                var item = this.itemAt(row);
+                // get reference to clicked element
+                var target = $(e.target);
+                // if (target.hasClass("Buku-link")) {
+                //     e.preventDefault();
+                //     let message = Q.format(
+                //         "<p>Anda menekan Sebuah Detail Buku</p>" +
+                //         "<p>Jika Anda Menekan YES, Maka Itu Akan Membuka Form Buku</p>" +
+                //         "<p>Jika Anda Menekan NO, Maka Itu Akan Menutup Dialog</p>",
+                //         Q.htmlEncode(item.JudulBuku));
+                //     Q.confirm(message, () => {
+                //         // CustomerDialog doesn't use CustomerID but ID (identity)
+                //         // so need to find customer to get its actual ID
+                //         var buku = Q.first(Perpustakaan.BukuRow.getLookup().items,
+                //             x => x.JudulBuku == item.JudulBuku);
+                //         new Perpustakaan.BukuDialog().loadByIdAndOpenDialog(buku.Id);
+                //     },
+                //         {
+                //             htmlEncode: false,
+                //             onNo: () => {
+                //                 Q.notifyInfo("Anda Menekan No. Kenapa?")
+                //             }
+                //         });
+                // }
+                // else if (target.hasClass("Rak-link")) {
+                //     e.preventDefault();
+                //     Q.notifySuccess("Anda Memfilter Data Rak " + item.NamaRak);
+                //     var rakFilter = this.findQuickFilter(Serenity.LookupEditor,
+                //         Perpustakaan.BukuRow.Fields.IdRak);
+                //     rakFilter.value = item.IdRak.toString();
+                //     this.refresh();
+                // }
+                // else if (target.hasClass("Kategori-link")) {
+                //     e.preventDefault();
+                //     Q.notifySuccess("Anda Memfilter Data Kategori " + item.NamaKategori);
+                //     var kategoriFilter = this.findQuickFilter(Serenity.LookupEditor,
+                //         Perpustakaan.BukuRow.Fields.IdKategori);
+                //     kategoriFilter.value = item.IdKategori.toString();
+                //     this.refresh();
+                // }
+                if (target.parent().hasClass('inline-action'))
+                    target = target.parent();
+                if (target.hasClass('inline-action')) {
+                    e.preventDefault();
+                    if (target.hasClass('delete-row')) {
+                        //     Q.confirm('Delete record?', () => {
+                        //         Perpustakaan.BukuService.Delete({
+                        //             EntityId: item.Id,
+                        //         }, response => {
+                        //             this.refresh();
+                        //         });
+                        //     });
+                    }
+                    else if (target.hasClass('view-details')) {
+                        // this.editItem(item.Id);
+                        var dialog = new PresensiSerenity.Presensi.AbsenDialog();
+                        this.initDialog(dialog);
+                        dialog.loadEntityAndOpenDialog({
+                            SiswaId: item.Id,
+                            GuruId: 1
+                        });
+                    }
+                }
             };
             SiswaGrid = __decorate([
                 Serenity.Decorators.registerClass()

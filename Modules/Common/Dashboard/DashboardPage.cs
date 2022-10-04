@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Serenity;
 using Serenity.Abstractions;
 using Serenity.Data;
@@ -35,7 +35,6 @@ namespace PresensiSerenity.Common.Pages
                     {
                         model.jmlSiswaAbsen = connection.Count<Presensi.AbsenRow>();
                         model.jmlSiswaSakit = connection.Count<Presensi.AbsenRow>( o.Ijin == 1 && o.Tanggal == DateTime.Today );
-                        // & o.Tanggal= DateTimeField(now));
                         model.jmlSiswaIjin = connection.Count<Presensi.AbsenRow>( o.Ijin == 3 && o.Tanggal == DateTime.Today );
                         model.jmlSiswaAlpha = connection.Count<Presensi.AbsenRow>( o.Ijin == 2 && o.Tanggal == DateTime.Today );                                                     
                     }

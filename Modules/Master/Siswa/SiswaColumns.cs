@@ -26,6 +26,7 @@ namespace PresensiSerenity.Master.Columns
         public string Alamat { get; set; }
         public string NamaAyah { get; set; }
         public string NamaIbu { get; set; }
+        // [QuickFilter]
         public string KelasNamaKelas { get; set; }
     }
 }

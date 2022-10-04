@@ -43,6 +43,11 @@ namespace MVC
 
         public static class Master
         {
+            public static class Dashboard
+            {
+                public const string MasterDashboardIndex = "~/Modules/Master/Dashboard/MasterDashboardIndex.cshtml";
+            }
+
             public static class Guru
             {
                 public const string GuruIndex = "~/Modules/Master/Guru/GuruIndex.cshtml";

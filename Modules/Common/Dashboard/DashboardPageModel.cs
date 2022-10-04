@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using Serenity;
 using MySql.Data.MySqlClient;
 using System.Linq;
@@ -13,6 +13,9 @@ namespace PresensiSerenity.Common
         public int jmlSiswaAlpha { get; set; }
 
         string connectionString = "Server=localhost;Port=3306;Database=presensidb;Username=root;Password=";
+=======
+        string connectionString = "Server=localhost;Port=3306;Database=presensiDB;Username=rendra;Password=123";
+>>>>>>> b219e455dd7dbb1ad2d6acbfed18512b83d3272b
         // public string KotaKota { get; set; } //nama nama kota
         public int AbsenCount { get; set; } 
 

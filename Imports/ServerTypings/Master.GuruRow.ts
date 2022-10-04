@@ -13,7 +13,7 @@
 
     export namespace GuruRow {
         export const idProperty = 'Id';
-        export const nameProperty = 'Nip';
+        export const nameProperty = 'Nama';
         export const localTextPrefix = 'Master.Guru';
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';

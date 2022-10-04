@@ -1,3 +1,4 @@
+
 ﻿
 namespace PresensiSerenity.Presensi {
 
@@ -15,4 +16,5 @@ namespace PresensiSerenity.Presensi {
         protected form = new AbsenForm(this.idPrefix);
 
     }
+
 }

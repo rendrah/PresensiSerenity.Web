@@ -1,4 +1,4 @@
-﻿using Serenity;
+using Serenity;
 using Serenity.Web;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,1 +1,1 @@
-﻿using Serenity.Navigation;
+using Serenity.Navigation;

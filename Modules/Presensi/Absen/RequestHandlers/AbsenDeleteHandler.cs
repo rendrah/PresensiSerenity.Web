@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Serenity;
 using Serenity.Data;
 using Serenity.Services;
