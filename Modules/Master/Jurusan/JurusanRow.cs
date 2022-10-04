@@ -10,8 +10,8 @@ namespace PresensiSerenity.Master
 {
     [ConnectionKey("Presensi"), Module("Master"), TableName("jurusan")]
     [DisplayName("Jurusan"), InstanceName("Jurusan")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission("Jurusan:View")]
+    [ModifyPermission("Jurusan:Modify")]
     [LookupScript]
     public sealed class JurusanRow : Row<JurusanRow.RowFields>, IIdRow, INameRow
     {

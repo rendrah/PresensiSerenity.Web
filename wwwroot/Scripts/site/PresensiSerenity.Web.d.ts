@@ -518,10 +518,10 @@ declare namespace PresensiSerenity.Master {
         const localTextPrefix = "Master.Jurusan";
         const lookupKey = "Master.Jurusan";
         function getLookup(): Q.Lookup<JurusanRow>;
-        const deletePermission = "Administration:General";
-        const insertPermission = "Administration:General";
-        const readPermission = "Administration:General";
-        const updatePermission = "Administration:General";
+        const deletePermission = "Jurusan:Modify";
+        const insertPermission = "Jurusan:Modify";
+        const readPermission = "Jurusan:View";
+        const updatePermission = "Jurusan:Modify";
         const enum Fields {
             IdJurusan = "IdJurusan",
             NamaJurusan = "NamaJurusan"
@@ -1228,6 +1228,9 @@ declare namespace PresensiSerenity.Master {
         constructor(container: JQuery);
         protected getQuickSearchFields(): Serenity.QuickSearchField[];
         protected getButtons(): Serenity.ToolButton[];
+        protected getSlickOptions(): Slick.GridOptions;
+        protected createSlickGrid(): Slick.Grid;
+        protected getColumns(): Slick.Column[];
     }
 }
 declare namespace PresensiSerenity.Membership {

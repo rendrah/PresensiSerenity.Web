@@ -13,10 +13,10 @@
         export function getLookup(): Q.Lookup<JurusanRow> {
             return Q.getLookup<JurusanRow>('Master.Jurusan');
         }
-        export const deletePermission = 'Administration:General';
-        export const insertPermission = 'Administration:General';
-        export const readPermission = 'Administration:General';
-        export const updatePermission = 'Administration:General';
+        export const deletePermission = 'Jurusan:Modify';
+        export const insertPermission = 'Jurusan:Modify';
+        export const readPermission = 'Jurusan:View';
+        export const updatePermission = 'Jurusan:Modify';
 
         export declare const enum Fields {
             IdJurusan = "IdJurusan",
