@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Serenity;
 using Serenity.Abstractions;
 using Serenity.Data;
@@ -37,7 +37,12 @@ namespace PresensiSerenity.Common.Pages
                         model.jmlSiswaSakit = connection.Count<Presensi.AbsenRow>( o.Ijin == 1 && o.Tanggal == DateTime.Today );
                         model.jmlSiswaIjin = connection.Count<Presensi.AbsenRow>( o.Ijin == 3 && o.Tanggal == DateTime.Today );
                         model.jmlSiswaAlpha = connection.Count<Presensi.AbsenRow>( o.Ijin == 2 && o.Tanggal == DateTime.Today );                                                     
-                    }
+                    
+                        
+                        // model.jmlBSakit = connection.Count<Presensi.AbsenRow>( o.Ijin == 1 && o.Tanggal.ToString("MM yyyy") == DateTime.Now.ToString("MM yyyy") );
+                        // model.jmlBIjin = connection.Count<Presensi.AbsenRow>( o.Ijin == 3 &&  o.Tanggal == DateTime.DaysInMonth );
+                        // model.jmlBAlpha = connection.Count<Presensi.AbsenRow>( o.Ijin == 2 && o.Tanggal == DateTime.Today );                                                     
+                 }
                     return model;
                 });
             return View(MVC.Views.Common.Dashboard.DashboardIndex, cachedModel);

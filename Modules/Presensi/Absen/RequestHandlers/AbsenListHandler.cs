@@ -1,5 +1,5 @@
 
-﻿using Serenity;
+using Serenity;
 using Serenity.Data;
 using Serenity.Services;
 using System;

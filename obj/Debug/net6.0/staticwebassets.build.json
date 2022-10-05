@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "md7djnpY7C8t7VbkSvr6/YQs5xZGNF36wm2LP14OHyw=",
+  "Hash": "KtzT00EkYSobAqbVYdM03Ocj2tbiIrERv080SES1c9U=",
   "Source": "PresensiSerenity.Web",
   "BasePath": "_content/PresensiSerenity.Web",
   "Mode": "Default",
@@ -12204,6 +12204,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Content\\site\\images\\accordion-arrows.png"
+    },
+    {
+      "Identity": "F:\\belajar aplikasi\\Serinity\\Presensi\\PresensiSerenity.Web\\wwwroot\\Content\\site\\images\\logo.png",
+      "SourceId": "PresensiSerenity.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\belajar aplikasi\\Serinity\\Presensi\\PresensiSerenity.Web\\wwwroot\\",
+      "BasePath": "_content/PresensiSerenity.Web",
+      "RelativePath": "Content/site/images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Content\\site\\images\\logo.png"
     },
     {
       "Identity": "F:\\belajar aplikasi\\Serinity\\Presensi\\PresensiSerenity.Web\\wwwroot\\Content\\site\\images\\serenity-logo-40.png",

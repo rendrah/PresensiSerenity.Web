@@ -1,5 +1,5 @@
 
-﻿
+
 namespace PresensiSerenity.Presensi {
 
     @Serenity.Decorators.registerClass()

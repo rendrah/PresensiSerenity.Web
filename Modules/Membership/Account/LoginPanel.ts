@@ -59,9 +59,9 @@
         protected getTemplate() {
             return `
     <h2 class="text-center p-4">
-        <img src="${Q.resolveUrl("~/Content/site/images/serenity-logo-w-128.png")}"
-            class="rounded-circle p-1" style="background-color: var(--s-sidebar-band-bg)"
-            width="50" height="50" /> PresensiSerenity
+        <img src="${Q.resolveUrl("~/Content/site/images/logo.png")}"
+        class="rounded-circle p-1" style="background-color: white" 
+            width="50" height="50" /> Presensi Sekolah
     </h2>
 
     <div class="s-Panel p-4">
@@ -77,13 +77,14 @@
                 <button id="~_LoginButton" type="submit" class="btn btn-primary my-3 w-100">
                     ${Q.text("Forms.Membership.Login.SignInButton")}
                 </button>
+                <div class="text-center mt-2">
+                <a class="text-decoration-none" href="${Q.resolveUrl('~/Account/SignUp')}">${Q.text("Forms.Membership.Login.SignUpButton")}</a>
+            </div> 
             </div>
         </form>
     </div>
 
-    <div class="text-center mt-2">
-        <a class="text-decoration-none" href="${Q.resolveUrl('~/Account/SignUp')}">${Q.text("Forms.Membership.Login.SignUpButton")}</a>
-    </div>   
+    
 `;
         }
     }
