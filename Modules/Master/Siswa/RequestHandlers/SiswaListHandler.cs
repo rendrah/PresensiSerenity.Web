@@ -19,14 +19,8 @@ namespace PresensiSerenity.Master
         public SiswaListHandler(IRequestContext context,IUserRetrieveService userRetriever)
              : base(context)
         {
-            UserRetriever = userRetriever ?? throw new ArgumentNullException(nameof(userRetriever));
+            
         }
-        protected override void ApplyFilters(SqlQuery query)
-        {
-            base.ApplyFilters(query);
 
-            UserDefinition user = User.GetUserDefinition<UserDefinition>(UserRetriever);
-            query.Where(fld.Nis == user.UserId);
-        }
     }
 }
