@@ -5,6 +5,7 @@
         Ijin?: Ijintype;
         Image?: string;
         Status?: number;
+        UserId?: number;
         SiswaId?: number;
         GuruId?: number;
         SiswaNis?: string;
@@ -43,6 +44,7 @@
             Ijin = "Ijin",
             Image = "Image",
             Status = "Status",
+            UserId = "UserId",
             SiswaId = "SiswaId",
             GuruId = "GuruId",
             SiswaNis = "SiswaNis",

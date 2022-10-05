@@ -24,9 +24,11 @@ namespace PresensiSerenity.Master
         protected override void ApplyFilters(SqlQuery query)
         {
             base.ApplyFilters(query);
-
-            UserDefinition user = User.GetUserDefinition<UserDefinition>(UserRetriever);
-            query.Where(fld.Nis == user.UserId);
+            if (Permissions.HasPermission("Role:siswa"))
+            {
+                UserDefinition user = User.GetUserDefinition<UserDefinition>(UserRetriever);
+                query.Where(fld.Nis == user.UserId);    
+            }
         }
     }
 

@@ -12,7 +12,7 @@ namespace PresensiSerenity.Master
     [DisplayName("Siswa"), InstanceName("Siswa")]
     [ReadPermission("Siswa:General")]
     [ModifyPermission("Siswa:General")]
-    [LookupScript]
+    [LookupScript(Permission = "?")]
     public sealed class SiswaRow : Row<SiswaRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity, IdProperty]

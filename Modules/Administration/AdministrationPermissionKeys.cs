@@ -13,5 +13,11 @@ namespace PresensiSerenity.Administration
 
         [Description("Languages and Translations")]
         public const string Translation = "Administration:Translation";
+        
+        [Description("Guru")]
+        public const string Guru = "Guru";
+        
+        [Description("Siswa")]
+        public const string Siswa = "Siswa";
     }
 }

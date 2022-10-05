@@ -12,37 +12,49 @@ namespace PresensiSerenity.Administration.Endpoints
     public class UserController : ServiceEndpoint
     {
         [HttpPost, AuthorizeCreate(typeof(MyRow))]
-        public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request)
+        public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request, [FromServices] ISqlConnections sqlConnections)
         {
-            return new MyRepository(Context).Create(uow, request);
+            return new MyRepository(Context, sqlConnections).Create(uow, request);
         }
 
         [HttpPost, AuthorizeUpdate(typeof(MyRow))]
-        public SaveResponse Update(IUnitOfWork uow, SaveRequest<MyRow> request)
+        public SaveResponse Update(IUnitOfWork uow, SaveRequest<MyRow> request,[FromServices] ISqlConnections sqlConnections)
         {
-            return new MyRepository(Context).Update(uow, request);
-        }
- 
-        [HttpPost, AuthorizeDelete(typeof(MyRow))]
-        public DeleteResponse Delete(IUnitOfWork uow, DeleteRequest request)
-        {
-            return new MyRepository(Context).Delete(uow, request);
+            return new MyRepository(Context, sqlConnections).Update(uow, request);
         }
 
         [HttpPost, AuthorizeDelete(typeof(MyRow))]
-        public UndeleteResponse Undelete(IUnitOfWork uow, UndeleteRequest request)
+        public DeleteResponse Delete(IUnitOfWork uow, DeleteRequest request, [FromServices] ISqlConnections sqlConnections)
         {
-            return new MyRepository(Context).Undelete(uow, request);
+            return new MyRepository(Context, sqlConnections).Delete(uow, request);
         }
 
-        public RetrieveResponse<MyRow> Retrieve(IDbConnection connection, RetrieveRequest request)
+        [HttpPost, AuthorizeDelete(typeof(MyRow))]
+        public UndeleteResponse Undelete(IUnitOfWork uow, UndeleteRequest request, [FromServices] ISqlConnections sqlConnections)
         {
-            return new MyRepository(Context).Retrieve(connection, request);
+            return new MyRepository(Context,sqlConnections).Undelete(uow, request);
         }
 
-        public ListResponse<MyRow> List(IDbConnection connection, ListRequest request)
+        public RetrieveResponse<MyRow> Retrieve(IDbConnection connection, RetrieveRequest request,[FromServices] ISqlConnections sqlConnections)
         {
-            return new MyRepository(Context).List(connection, request);
+            return new MyRepository(Context,sqlConnections).Retrieve(connection, request);
         }
+
+        public ListResponse<MyRow> List(IDbConnection connection, ListRequest request,[FromServices] ISqlConnections sqlConnections)
+        {
+            return new MyRepository(Context,sqlConnections).List(connection, request);
+        }
+       
+        // public UserRepository(IRequestContext context, ISqlConnections sqlConn)
+        //     : base(context)
+        // {
+        //     SqlConn = sqlConn;
+        // }
+        
+        // [HttpPost, AuthorizeCreate(typeof(MyRow))]
+        // public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request, [FromServices] ISqlConnections sqlConnections)
+        // {
+        //     return new MyRepository(Context, sqlConnections).Create(uow, request);
+        // }
     }
 }

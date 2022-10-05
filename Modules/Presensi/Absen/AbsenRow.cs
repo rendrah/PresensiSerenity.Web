@@ -49,6 +49,13 @@ namespace PresensiSerenity.Presensi
             set => fields.Status[this] = value;
         }
 
+        [DisplayName("UserId")]
+        public int? UserId
+        {
+            get => fields.UserId[this];
+            set => fields.UserId[this] = value;
+        }
+
         [DisplayName("Siswa"), Column("siswaId"), ForeignKey("siswa", "Id"), LeftJoin("jSiswa"), TextualField("SiswaNis")]
         [LookupEditor(typeof(Master.SiswaRow), InplaceAdd = true), LookupInclude]
         public int? SiswaId
@@ -58,6 +65,7 @@ namespace PresensiSerenity.Presensi
         }
 
         [DisplayName("Guru"), Column("guruId"), ForeignKey("guru", "Id"), LeftJoin("jGuru"), TextualField("GuruNip")]
+        [LookupEditor(typeof(Master.GuruRow), InplaceAdd = true), LookupInclude]
         public int? GuruId
         {
             get => fields.GuruId[this];
@@ -214,6 +222,7 @@ namespace PresensiSerenity.Presensi
             public Int32Field Ijin;
             public StringField Image;
             public Int32Field Status;
+            public Int32Field UserId;
             public Int32Field SiswaId;
             public Int32Field GuruId;
 

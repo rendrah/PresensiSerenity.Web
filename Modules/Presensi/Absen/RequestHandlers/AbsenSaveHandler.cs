@@ -17,5 +17,15 @@ namespace PresensiSerenity.Presensi
              : base(context)
         {
         }
+
+        protected override void BeforeSave() 
+        {
+            base.BeforeSave();
+
+            if (IsCreate)
+            {
+                Row.UserId = Int32.Parse(Context.User.GetIdentifier());
+            }
+        }
     }
 }

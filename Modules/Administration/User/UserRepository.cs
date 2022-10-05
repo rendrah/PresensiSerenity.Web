@@ -14,26 +14,27 @@ using System.Data;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using PresensiSerenity.Master;
+using PresensiSerenity.Administration.Entities;
 
 namespace PresensiSerenity.Administration.Repositories
 {
     public partial class UserRepository : BaseRepository
     {
-        public UserRepository(IRequestContext context)
+        private static ISqlConnections SqlConn;
+        public UserRepository(IRequestContext context, ISqlConnections sqlConnections)
             : base(context)
         {
+            SqlConn = sqlConnections;
         }
 
         private static MyRow.RowFields fld { get { return MyRow.Fields; } }
         public static bool IsPublicDemo { get; set; }
-
-        
-
         public static void CheckPublicDemo(int? userID)
         {
             if (userID == 1 && IsPublicDemo)
                 throw new ValidationException("Sorry, but no changes " +
-                    "are allowed in public demo on ADMIN user!"); 
+                    "are allowed in public demo on ADMIN user!");
         }
 
         public static bool IsValidPhone(string number)
@@ -174,7 +175,7 @@ namespace PresensiSerenity.Administration.Repositories
                 return true;
             }
 
-            public static string ValidateUsername(IDbConnection connection, string username, int? existingUserId, 
+            public static string ValidateUsername(IDbConnection connection, string username, int? existingUserId,
                 ITextLocalizer localizer)
             {
                 username = username.TrimToNull();
@@ -241,11 +242,52 @@ namespace PresensiSerenity.Administration.Repositories
                 }
             }
 
+            //  protected override void BeforeSave()
+            // {
+            //     base.BeforeSave();
+            //     if (IsCreate)
+            //     {
+            //          Row. = DateTime.Now;
+            //          Row.InBy = Int32.Parse(Context.User.GetIdentifier());
+            //     }
+            // }
+            
+
             protected override void AfterSave()
             {
                 base.AfterSave();
 
-                Cache.InvalidateOnCommit(UnitOfWork, fld);
+                var conn = SqlConn.NewByKey("Presensi");
+                string[] words = Row.DisplayName.Split('|');
+                
+                if (words.Length >= 2 && words[1] == "guru")
+                {
+                    var requestGuru = new GuruRow
+                    {
+                        Nama = words[0]
+                    };
+                    conn.Insert<GuruRow>(requestGuru);
+                    Cache.InvalidateOnCommit(UnitOfWork, fld);
+                    
+                    Connection.Insert<UserRoleRow>(new UserRoleRow{
+                       UserId=int.Parse(Response.EntityId.ToString()),
+                        RoleId=3
+                    });
+                }
+                else
+                {
+                    var requestSiswa = new SiswaRow
+                    {
+                        Nama = words[0]
+                    };
+                    conn.Insert<SiswaRow>(requestSiswa);
+                    Cache.InvalidateOnCommit(UnitOfWork, fld);
+                     Connection.Insert<UserRoleRow>(new UserRoleRow{
+                       UserId=int.Parse(Response.EntityId.ToString()),
+                        RoleId=1
+                    });
+                }
+
             }
         }
 
@@ -292,8 +334,8 @@ namespace PresensiSerenity.Administration.Repositories
             }
         }
 
-        private class MyUndeleteHandler : UndeleteRequestHandler<MyRow> 
-        { 
+        private class MyUndeleteHandler : UndeleteRequestHandler<MyRow>
+        {
             public MyUndeleteHandler(IRequestContext context)
                  : base(context)
             {

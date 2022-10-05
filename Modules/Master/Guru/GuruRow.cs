@@ -12,6 +12,7 @@ namespace PresensiSerenity.Master
     [DisplayName("Guru"), InstanceName("Guru")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
+    [LookupScript("Master.Guru", Permission = "?")]
     public sealed class GuruRow : Row<GuruRow.RowFields>, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity, IdProperty]

@@ -5,7 +5,7 @@
         Image: Serenity.StringEditor;
         Status: Serenity.IntegerEditor;
         SiswaId: Serenity.LookupEditor;
-        GuruId: Serenity.IntegerEditor;
+        GuruId: Serenity.LookupEditor;
     }
 
     export class AbsenForm extends Serenity.PrefixedContext {
@@ -31,7 +31,7 @@
                     'Image', w2,
                     'Status', w3,
                     'SiswaId', w4,
-                    'GuruId', w3
+                    'GuruId', w4
                 ]);
             }
         }

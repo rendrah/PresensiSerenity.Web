@@ -12,13 +12,17 @@ namespace PresensiSerenity.Presensi.Forms
     [BasedOnRow(typeof(AbsenRow), CheckNames = true)]
     public class AbsenForm
     {
+        [DefaultValue("Now")]
         public DateTime Tanggal { get; set; }
         public string Ijin { get; set; }
+        [ReadPermission("Absensi:SiswaRead"),ModifyPermission("Absensi:SiswaModify")]
         public string Image { get; set; }
         public int Status { get; set; }
         [ReadOnly(true)]
+        [ReadPermission("Absensi:SiswaRead"),ModifyPermission("Absensi:SiswaModify")]
         public int SiswaId { get; set; }
         [ReadOnly(true)]
+        [ReadPermission("Absensi:GuruRead"),ModifyPermission("Absensi:GuruModify")]
         public int GuruId { get; set; }
     }
 }

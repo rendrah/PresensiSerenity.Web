@@ -15,6 +15,11 @@
         export const idProperty = 'Id';
         export const nameProperty = 'Nama';
         export const localTextPrefix = 'Master.Guru';
+        export const lookupKey = 'Master.Guru';
+
+        export function getLookup(): Q.Lookup<GuruRow> {
+            return Q.getLookup<GuruRow>('Master.Guru');
+        }
         export const deletePermission = 'Administration:General';
         export const insertPermission = 'Administration:General';
         export const readPermission = 'Administration:General';

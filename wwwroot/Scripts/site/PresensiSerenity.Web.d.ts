@@ -66,6 +66,8 @@ declare namespace PresensiSerenity.Administration {
     namespace PermissionKeys {
         const Security = "Administration:Security";
         const Translation = "Administration:Translation";
+        const Guru = "Guru";
+        const Siswa = "Siswa";
     }
 }
 declare namespace PresensiSerenity.Administration {
@@ -452,6 +454,8 @@ declare namespace PresensiSerenity.Master {
         const idProperty = "Id";
         const nameProperty = "Nama";
         const localTextPrefix = "Master.Guru";
+        const lookupKey = "Master.Guru";
+        function getLookup(): Q.Lookup<GuruRow>;
         const deletePermission = "Administration:General";
         const insertPermission = "Administration:General";
         const readPermission = "Administration:General";
@@ -807,7 +811,7 @@ declare namespace PresensiSerenity.Presensi {
         Image: Serenity.StringEditor;
         Status: Serenity.IntegerEditor;
         SiswaId: Serenity.LookupEditor;
-        GuruId: Serenity.IntegerEditor;
+        GuruId: Serenity.LookupEditor;
     }
     class AbsenForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -822,6 +826,7 @@ declare namespace PresensiSerenity.Presensi {
         Ijin?: Ijintype;
         Image?: string;
         Status?: number;
+        UserId?: number;
         SiswaId?: number;
         GuruId?: number;
         SiswaNis?: string;
@@ -858,6 +863,7 @@ declare namespace PresensiSerenity.Presensi {
             Ijin = "Ijin",
             Image = "Image",
             Status = "Status",
+            UserId = "UserId",
             SiswaId = "SiswaId",
             GuruId = "GuruId",
             SiswaNis = "SiswaNis",
